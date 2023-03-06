@@ -2,7 +2,7 @@
 const frm = document.querySelector("form")  
 
 //Pegando o img
-const imClube = document.querySelector("#imgUnidade")
+const imUnidade= document.querySelector("#imgUnidade")
 
 //Pegando o título
 const dvTitulo = document.querySelector("#divTitulo")
@@ -26,9 +26,9 @@ const trocarUnidade= () => {
   dvTitulo.className = `row cores-${unidade}`
 
   // modifica a imagem de acordo com a seleção do cliente
-  imClube.src = `img/${unidade.toLowerCase()}.jpg`
-  imClube.className = "img-fluid"        // muda o estilo para exibir a imagem
-  imClube.alt = `Símbolo do ${unidade}`    // modifica atributo alt
+  imUnidade.src = `img/${unidade.toLowerCase()}.jpg`
+  imUnidade.className = "img-fluid"        // muda o estilo para exibir a imagem
+  imUnidade.alt = `Símbolo do ${unidade}`    // modifica atributo alt
 
   localStorage.setItem("unidade", unidade)   // salva no navegador a escolha do cliente
 }
@@ -43,7 +43,7 @@ frm.rbGama.addEventListener("change", trocarUnidade)
 //Função vai usar o getItem para verificar a unidade
 const verificarUnidade = () => {
   if (localStorage.getItem("unidade")) {           // se já estiver salvo algum clube
-    const clube = localStorage.getItem("unidade")  // obtém o nome do clube
+    const unidade = localStorage.getItem("unidade")  // obtém o nome do clube
 
     if (unidade == "Brasilia") {                     // conforme o clube, marca checked 
       frm.rbBrasilia.checked = true
